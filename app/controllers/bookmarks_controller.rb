@@ -1,5 +1,5 @@
 class BookmarksController < ApplicationController
-  before_action :set_bookmark, only: %i[ show update destroy ]
+  before_action :set_bookmark, only: %i[show update destroy]
 
   # GET /bookmarks
   def index
@@ -39,13 +39,14 @@ class BookmarksController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_bookmark
-      @bookmark = Bookmark.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def bookmark_params
-      params.require(:bookmark).permit(:title, :url)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_bookmark
+    @bookmark = Bookmark.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def bookmark_params
+    params.require(:bookmark).permit(:title, :url)
+  end
 end
