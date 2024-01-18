@@ -23,6 +23,7 @@
     - [Run tests](#run-tests)
     - [Run linter](#run-linter)
     - [Deployment](#deployment)
+    - [Test with postman](#test-with-postman)
   - [👥 Authors ](#-authors-)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
@@ -131,6 +132,19 @@ Not available at the moment.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+### Test with postman
+
+Send a POST request with valid parameters:
+![Alt text](<test_ postman_one.png>)
+Answer of a POST request with valid parameters:
+![Alt text](postman_one_valid_parameters.png)
+
+Send a POST request with invalid parameters:
+![Alt text](test_postman_two.png)
+Error as a result of a POST request with invalid parameters:
+![Alt text](error_postman_two_invalid.png)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 👥 Authors <a name="authors"></a>
 
