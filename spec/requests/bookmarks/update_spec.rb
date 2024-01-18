@@ -5,6 +5,9 @@ describe 'PUT /bookmarks' do
   # before each scenario is ran
   let!(:bookmark) { Bookmark.create(url: 'https://www.quezadajulio.com', title: 'the best one') }
 
+  # create a user before the test scenarios are run
+  let!(:user) { User.create(username: 'July', authentication_token: 'token2') }
+
   scenario 'valid bookmark attributes' do
     # send put request to /bookmarks/:id
     put "/bookmarks/#{bookmark.id}", params: {
@@ -12,7 +15,7 @@ describe 'PUT /bookmarks' do
         url: 'https://www.linkedin.com/in/quezadajulio/',
         title: 'Julio developer'
       }
-    }
+    }, headers: { 'X-Username': user.username, 'X-Token': user.authentication_token }
 
     # response should have HTTP Status 200 OK
     expect(response.status).to eq(200)
@@ -34,7 +37,7 @@ describe 'PUT /bookmarks' do
         url: '',
         title: 'Julio'
       }
-    }
+    }, headers: { 'X-Username': user.username, 'X-Token': user.authentication_token }
 
     # response should have HTTP Status 422 Unprocessable entity
     expect(response.status).to eq(422)
